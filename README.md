@@ -4,6 +4,8 @@ Turns the original (v1.0) `super m. bros.64` PRG into the VIC-II Kawari build
 (`build/smb-kawari.prg`).  The patch holds only the differences: 2,989 bytes,
 none of the original game.
 
+![Screenshot of SMB on the Commodore 64](images/smb-kawari.png)
+
 # What changes?
 
 FPS slowdowns eliminated.
