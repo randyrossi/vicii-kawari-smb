@@ -1,2 +1,39 @@
-# vicii-kawari-smb
-A patch to zeropaige's Super Mario Bros Commodore 64 Port (1.0 with Kawari Extensions For Speed/Visuals
+# smb-kawari.patch
+
+Turns the original (v1.0) `super m. bros.64` PRG into the VIC-II Kawari build
+(`build/smb-kawari.prg`).  The patch holds only the differences: 2,989 bytes,
+none of the original game.
+
+# What changes?
+
+FPS slowdowns eliminated.
+Pipes and bushes updated to look closer to original SNES version.
+
+NOTE: Kawari firmware 1.20 or higher is required to run this software.
+
+| file | SHA-256 |
+|---|---|
+| input: `super m. bros.64` (48,564 bytes) | `ea4a4be2fee56bf17ac72e7076081d64842e56e387c91bd80cbda2e478241a7e` |
+| output: `smb-kawari.prg` (51,061 bytes) | `6ffd83b20e7c5cb5f53d199e0f7f64458a695f2d2fe69475a7e2740d0131a512` |
+
+You will need VICE's c1541 tool installed.
+
+## Extract the prg from v1.0 of ZeroPaige's .d64
+
+    c1541 -attach 'Super Mario Bros 64 v1.0 (2019-04-18)(Zeropaige).d64' -read 'super m. bros.64'
+
+## Apply the patch
+
+Needs Python 3.6 or later, no extra packages.
+
+    python3 apply_patch.py 'super m. bros.64' smb-kawari.patch smb-kawari.prg
+
+The input is checked against the first checksum and the result against the
+second, so the output is either byte-exact or nothing is written.  The input
+file is only read.
+
+## Put the image back to a new .d64 file
+
+    c1541 -format 'kawari-smb,00' d64 kawari-smb-pal.d64
+    c1541 -attach kawari-smb-pal.d64 -write smb-kawari.prg
+
