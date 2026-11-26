@@ -16,7 +16,8 @@ NOTE: Kawari firmware 1.20 or higher is required to run this software.
 | file | SHA-256 |
 |---|---|
 | input: `super m. bros.64` (48,564 bytes) | `ea4a4be2fee56bf17ac72e7076081d64842e56e387c91bd80cbda2e478241a7e` |
-| output: `smb-kawari.prg` (51,061 bytes) | `6ffd83b20e7c5cb5f53d199e0f7f64458a695f2d2fe69475a7e2740d0131a512` |
+| output: `smb-kawari.prg` (51,062 bytes) | `04b509077b6d9feff7ff44c22c94762c5b2cf54e1c4868fa2104b23a03b85f87` |
+
 
 You will need VICE's c1541 tool installed.
 
